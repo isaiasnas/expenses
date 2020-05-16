@@ -15,3 +15,7 @@ Versão | Status | Data
 ----------|--------|-------------
 0.0.1 | beta | ---------------
 0.0.0 | beta | 2020-01-01
+
+## License
+
+[MIT](https://github.com/isaiasnas/expenses/blob/master/LICENSE)
