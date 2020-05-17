@@ -26,20 +26,11 @@ class TransactionList extends StatelessWidget {
                       'assets/images/waiting.png',
                       fit: BoxFit.cover,
                     ),
-                  )
+                  ),
                 ],
               );
             },
           )
-        // : ListView(
-        //     children: transactions.map((e) {
-        //       return TransactionItem(
-        //         key: ValueKey(e.id),
-        //         tr: e,
-        //         onRemove: onRemove,
-        //       );
-        //     }).toList(),
-        //   );
         : ListView.builder(
             itemCount: transactions.length,
             itemBuilder: (ctx, index) {

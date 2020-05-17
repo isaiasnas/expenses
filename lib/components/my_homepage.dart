@@ -109,7 +109,8 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     final PreferredSizeWidget appBar = Platform.isIOS
         ? CupertinoNavigationBar(
             middle: Text('Despesas Pessoais'),
-            trailing: Row(children: actions, mainAxisSize: MainAxisSize.min))
+            trailing: Row(children: actions, mainAxisSize: MainAxisSize.min),
+          )
         : AppBar(title: Text('Despesas Pessoais'), actions: actions);
 
     final availableHeight = mediaQuery.size.height -

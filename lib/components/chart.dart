@@ -9,28 +9,26 @@ class Chart extends StatelessWidget {
   const Chart(this.recentTrasaction);
 
   List<Map<String, Object>> get groupedTransactions {
-    return List.generate(7, (index) {
-      final weekDay = DateTime.now().subtract(Duration(
-        days: index,
-      ));
+    return List.generate(
+      7,
+      (index) {
+        final weekDay = DateTime.now().subtract(Duration(days: index));
 
-      double totalSum = 0.0;
+        double totalSum = 0.0;
 
-      for (var i = 0; i < recentTrasaction.length; i++) {
-        bool sameDay = recentTrasaction[i].date.day == weekDay.day;
-        bool sameMonth = recentTrasaction[i].date.month == weekDay.month;
-        bool sameYear = recentTrasaction[i].date.year == weekDay.year;
+        for (var i = 0; i < recentTrasaction.length; i++) {
+          bool sameDay = recentTrasaction[i].date.day == weekDay.day;
+          bool sameMonth = recentTrasaction[i].date.month == weekDay.month;
+          bool sameYear = recentTrasaction[i].date.year == weekDay.year;
 
-        if (sameDay && sameMonth && sameYear) {
-          totalSum += recentTrasaction[i].value;
+          if (sameDay && sameMonth && sameYear) {
+            totalSum += recentTrasaction[i].value;
+          }
         }
-      }
 
-      return {
-        'day': DateFormat.E().format(weekDay)[0],
-        'value': totalSum,
-      };
-    }).reversed.toList();
+        return {'day': DateFormat.E().format(weekDay)[0], 'value': totalSum};
+      },
+    ).reversed.toList();
   }
 
   double get _weekTotalValue {
